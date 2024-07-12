@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="th" data-theme="wireframe">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โปรไฟล์ของณัฐสิทธิ์ อ่วมแก้ว</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInTopLeft {
+            from {
+                opacity: 0;
+                transform: translate(-50px, -50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translate(0, 0);
+            }
+        }
+
+        .card {
+            opacity: 0;
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        .card.animate {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        .card:not(.animate) {
+            opacity: 0;
+            transform: translate(-50px, -50px);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mx-auto p-4">
+        <div class="card lg:card-side bg-base-100 shadow-xl">
+            <div class="avatar">
+                <div class="ring-info ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
+                    <img src="pro.jpg" />
+                </div>
+            </div>
+            <div class="card-body">
+                <h2 class="card-title text-4xl">ณัฐสิทธิ์ อ่วมแก้ว Nattasit Aomkaew</h2>
+                <p class="text-xl">วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)</p>
+                <div class="flex flex-col gap-2">
+                    <p><i class="fas fa-phone"></i> 063-950-3701</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 104/1 ม.5 ต.ราษฎรพัฒนา อ.สาามโก้ จ.อ่างทอง 14160</p>
+                    <p><i class="fas fa-envelope"></i> nattasitkung.am@gmail.com</p>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <div class="flex flex-col gap-2">
+                    <a href="https://www.facebook.com/Jame.Nattasit.4508" class="btn btn-circle btn-outline">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="btn btn-circle btn-outline">
+                        <i class="fab fa-line"></i>
+                    </a>
+                    <a href="#" class="btn btn-circle btn-outline">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <div class="flex justify-between items-center">
+                        <h2 class="card-title">เกี่ยวกับฉัน</h2>
+                        <button id="langToggle" class="btn btn-Info btn-sm">EN</button>
+                    </div>
+                    <p id="aboutMeThai">
+
+                        ผมมีความชื่นชอบในคอมพิวเตอร์ตั้งแต่ยังเด็ก
+                        เนื่องจากคอมพิวเตอร์เป็นเครื่องมือที่เปิดโอกาสให้ผมได้เรียนรู้สิ่งใหม่ ๆ
+                        การศึกษาด้านนี้จึงเป็นสิ่งที่ผมรักและถนัดมาก ผมได้พัฒนาทักษะต่าง ๆ เช่น
+                        การสร้างเว็บไซต์และการพัฒนาแอพพลิเคชั่น
+                        เพื่อเตรียมพร้อมในการหาประสบการณ์และพัฒนาผลงานของตนเองต่อไป ผมเชื่อว่าการเรียนรู้ไม่สิ้นสุด
+                        และคอมพิวเตอร์เป็นสื่อที่สามารถสร้างสรรค์นวัตกรรมใหม่ ๆ ได้อย่างไม่มีขีดจำกัด นอกจากนี้
+                        ผมยังมีความตั้งใจที่จะใช้ความรู้และทักษะที่มีในการพัฒนางานด้านไอทีให้มีประสิทธิภาพมากขึ้น
+                        ทั้งนี้เพื่อสร้างประโยชน์ให้กับองค์กรและสังคมในวงกว้าง
+                        ความมุ่งมั่นของผมคือการเป็นผู้เชี่ยวชาญในสายงานนี้และนำพาองค์กรไปสู่ความสำเร็จด้วยการใช้เทคโนโลยีที่ทันสมัยและมีคุณภาพ
+                    </p>
+                    <p id="aboutMeEng" class="hidden">
+                        Since childhood, I have had a passion for computers because they have always opened doors to new
+                        knowledge for me. This passion led me to pursue studies in this field, which I both love and
+                        excel at. I have developed various skills such as website creation and application development
+                        to prepare myself for gaining experience and further improving my work. I believe that learning
+                        is endless, and computers are tools that can create limitless innovations. Additionally, I am
+                        determined to use my knowledge and skills to enhance the efficiency of IT projects, benefiting
+                        organizations and society at large. My commitment is to become an expert in this field and lead
+                        organizations to success through the use of advanced and high-quality technology.</p>
+
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">ทักษะ</h2>
+                    <ul class="space-y-2">
+                        <li class="flex justify-between items-center">
+                            <span>C++</span>
+                            <span class="badge badge-primary">(4/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>HTML/PHP</span>
+                            <span class="badge badge-primary">(7/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>SQL</span>
+                            <span class="badge badge-primary">(8/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Java</span>
+                            <span class="badge badge-primary">(5/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Android Studio</span>
+                            <span class="badge badge-primary">(5/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Oracle</span>
+                            <span class="badge badge-primary">(6/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Photoshop</span>
+                            <span class="badge badge-primary">(7/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>Vegas</span>
+                            <span class="badge badge-primary">(7/10)</span>
+                        </li>
+                        <li class="flex justify-between items-center">
+                            <span>VS Code</span>
+                            <span class="badge badge-primary">(8/10)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">การศึกษา</h2>
+                    <p>มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี (2020 - 2024)</p>
+                    <p>สาขาวิทยาการคอมพิวเตอร์</p>
+                </div>
+            </div>
+
+            <div class="card bg-base-100 shadow-xl">
+                <div class="card-body">
+                    <h2 class="card-title">โปรเจกต์</h2>
+                    <ul class="list-disc list-inside">
+                        <li>
+                            <strong>เว็บไซต์รีวิวเมล็ดกาแฟและสูตรการชงกาแฟ (2022)</strong>
+                            <p>ออกแบบและพัฒนาเว็บไซต์การรีวิวเมล็ดพันธุ์กาแฟและสูตรการชงกาแฟแต่ละเมนู เก็บข้อมูลเข้า
+                                database มีระบบแอดมินแก้ไขข้อมูล กำลังพัฒนาเป็นเว็บไซต์ขายเมล็ดพันธุ์กาแฟ</p>
+                        </li>
+                        <li>
+                            <strong>แอพพลิเคชั่นรีวิวภาพยนตร์ (2022)</strong>
+                            <p>สร้างแอพพลิเคชั่นที่รีวิวภาพยนตร์ที่ให้คนเข้ามาคอมเมนต์และให้ดาวกับภาพยนตร์ต่างๆ</p>
+                        </li>
+                        <li>
+                            <strong>เทคโนโลยีความจริงเสมือนจำลองสวนสาธารณะทศมินทราภิรมย์ (2024)</strong>
+                            <p>สร้างเว็บไซต์แสดงภาพ 360
+                                องศาจำลองสวนสาธารณะทศมินทราภิรมย์เพื่อเพิ่มประสบการณ์ใหม่ๆในการเสนอสื่อประชาสัมพันธ์</p>
+                            <a href="https://touchpoint.in.th/online-interactive-info/vrtsmpark/"
+                                class="btn btn-circle btn-outline">
+                                <i class="fas fa-eye"></i>
+
+                            </a> ผลงานการสร้าง
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">หลักสูตรที่ผ่านอบรม</h2>
+                <ul class="list-disc list-inside">
+                    <li>Computer and Information Technology Skills (2021)</li>
+                    <li>LaravelFramework (2022)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">เอกสารการศึกษา</h2>
+                <div class="flex flex-col space-y-4">
+                    <a href="tan.pdf" class="btn btn-outline btn-info">
+                        <i class="fas fa-file-pdf mr-2"></i>
+                        Transcript
+                    </a>
+                    <a href="rep.pdf" class="btn btn-outline btn-success">
+                        <i class="fas fa-graduation-cap mr-2"></i>
+                        ใบรับรองวุฒิ
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title">ผลงานการพัฒนาเว็บไซต์และแอพพลิเคชั่น</h2>
+                <div class="carousel w-full">
+                    <div id="slide1" class="carousel-item relative w-full">
+                        <img src="vr.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide6" class="btn btn-circle">❮</a>
+                            <a href="#slide2" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+
+                    <div id="slide2" class="carousel-item relative w-full">
+                        <img src="sasa.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide1" class="btn btn-circle">❮</a>
+                            <a href="#slide3" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide3" class="carousel-item relative w-full">
+                        <img src="parn1.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide2" class="btn btn-circle">❮</a>
+                            <a href="#slide4" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide4" class="carousel-item relative w-full">
+                        <img src="parn2.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide3" class="btn btn-circle">❮</a>
+                            <a href="#slide1" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide5" class="carousel-item relative w-full">
+                        <img src="runnum.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide4" class="btn btn-circle">❮</a>
+                            <a href="#slide6" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                    <div id="slide6" class="carousel-item relative w-full">
+                        <img src="house.jpg" class="w-full" onclick="openModal(this.src)" />
+                        <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                            <a href="#slide5" class="btn btn-circle">❮</a>
+                            <a href="#slide1" class="btn btn-circle">❯</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+    <script>
+        function isElementPartiallyInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            const windowHeight = (window.innerHeight || document.documentElement.clientHeight);
+            const windowWidth = (window.innerWidth || document.documentElement.clientWidth);
+
+            const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+            const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+
+            return (vertInView && horInView);
+        }
+
+        function handleScroll() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                if (isElementPartiallyInViewport(card)) {
+                    card.classList.add('animate');
+                } else {
+                    card.classList.remove('animate');
+                }
+            });
+        }
+
+        // Initial check
+        handleScroll();
+
+        // Listen for scroll events
+        window.addEventListener('scroll', handleScroll);
+
+        const langToggle = document.getElementById('langToggle');
+        const aboutMeThai = document.getElementById('aboutMeThai');
+        const aboutMeEng = document.getElementById('aboutMeEng');
+
+        langToggle.addEventListener('click', function () {
+            if (aboutMeThai.classList.contains('hidden')) {
+                aboutMeThai.classList.remove('hidden');
+                aboutMeEng.classList.add('hidden');
+                this.textContent = 'EN';
+            } else {
+                aboutMeThai.classList.add('hidden');
+                aboutMeEng.classList.remove('hidden');
+                this.textContent = 'TH';
+            }
+        });
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("modalImage");
+
+        function openModal(src) {
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
