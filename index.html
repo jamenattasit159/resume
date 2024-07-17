@@ -7,8 +7,14 @@
     <title>โปรไฟล์ของณัฐสิทธิ์ อ่วมแก้ว</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;700&display=swap" rel="stylesheet">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+            font-family: 'Noto Sans Thai', sans-serif;
+        }
+
         @keyframes fadeInTopLeft {
             from {
                 opacity: 0;
@@ -24,6 +30,9 @@
         .card {
             opacity: 0;
             transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+
+            box-shadow: 8px 8px 21px 12px rgba(150, 150, 150, 0.42);
         }
 
         .card.animate {
@@ -49,40 +58,33 @@
             background-color: rgba(0, 0, 0, 0.9);
         }
 
-        .modal-content {
-            margin: auto;
-            display: block;
-            width: 80%;
-            max-width: 700px;
+        .avatar {
+            display: flex;
+            justify-content: center;
         }
 
-        .close {
-            position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #f1f1f1;
-            font-size: 40px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
 
-        .close:hover,
-        .close:focus {
-            color: #bbb;
-            text-decoration: none;
-            cursor: pointer;
+
+
+
+        @media (min-width: 768px) {
+            .avatar {
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container mx-auto p-4">
-        <div class="card lg:card-side bg-base-100 shadow-xl">
+        <div class="card lg:card-side bg-base-100 ">
+
             <div class="avatar">
                 <div class="ring-info ring-offset-base-100 w-24 rounded-full ring ring-offset-2">
                     <img src="pro.jpg" />
                 </div>
             </div>
+
             <div class="card-body">
                 <h2 class="card-title text-4xl">ณัฐสิทธิ์ อ่วมแก้ว Nattasit Aomkaew</h2>
                 <p class="text-xl">วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)</p>
@@ -98,12 +100,13 @@
                     <a href="https://www.facebook.com/Jame.Nattasit.4508" class="btn btn-circle btn-outline">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="#" class="btn btn-circle btn-outline">
+                    <a href="https://line.me/ti/p/I8jDdh_f1b" class="btn btn-circle btn-outline">
                         <i class="fab fa-line"></i>
                     </a>
-                    <a href="#" class="btn btn-circle btn-outline">
+                    <a href="mailto:nattasitkung.am@gmail.com" class="btn btn-circle btn-outline">
                         <i class="fas fa-envelope"></i>
                     </a>
+
                 </div>
             </div>
         </div>
